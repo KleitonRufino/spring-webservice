@@ -1,0 +1,55 @@
+body {
+	font-family: sans-serif;
+	background-color: #E9E9E9;
+}
+
+footer {
+	text-align: center;
+	clear: both;
+	bottom: 0;
+	position: relative;
+	width: 100%;
+	margin-top: 0;
+	border-top: 0;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer>p {
+	margin-bottom: 0;
+	color: #7C7C7C;
+}
+
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#navbar-brand {
+	padding: 0%;
+}
+
+.navbar-default .navbar-text {
+	color: #FFF;
+}
+
+h3 {
+	padding: 5px 10px;
+}
+
+a, a:hover, a:visited, a:active, button, button:hover, button:visited,
+	button:active input.btn, input.btn:visited, input.btn:active, input.btn:focus
+	{
+	outline: medium none !important;
+	outline-offset: 0px !important;
+	text-decoration: none !important;
+}
