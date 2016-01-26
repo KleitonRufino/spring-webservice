@@ -4,7 +4,5 @@
 
 
 <footer>
-	<p>Desenvolvido por Kleiton Rufino Para</p>
-	<br /> <img id="logo-linx" alt="Linx Sistemas"
-		src="<c:url value="/resources/img/logo.png" />">
+	<p>Desenvolvido por Kleiton Rufino </p>
 </footer>
