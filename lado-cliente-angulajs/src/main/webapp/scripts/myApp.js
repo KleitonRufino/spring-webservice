@@ -7,7 +7,7 @@
 		}). when('/create',{
 			templateUrl : 'views/create.html',
 			controllerAs : 'cc',
-			controller : 'PessoaReadController'
+			controller : 'PessoaCreateController'
 		}). when('/edit/:id',{
 			templateUrl : 'views/edit.html',
 			controllerAs : 'ce',

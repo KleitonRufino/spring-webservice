@@ -14,7 +14,7 @@
 
 		
 		function getEdit(item) {
-			return PessoaService.getEdit(item,id).then(function(data) {
+			return PessoaService.getEdit(item,item.id).then(function(data) {
 				$log.info('Controller' + data);
 				$location.path('/');
 			});
