@@ -21,12 +21,12 @@ import com.service.PessoaService;
 @Controller
 @RequestMapping("pessoa")
 public class PessoaController {
-	
+
 	@Inject
 	private PessoaService pessoaService;
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@RequestMapping(value = "findAll", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<Pessoa> findAll() {
 		log.debug("Pessoa - GET (all)");
 		return pessoaService.findAll();
@@ -38,22 +38,22 @@ public class PessoaController {
 		return pessoaService.findById(id);
 	}
 
-	@RequestMapping(value = "insert", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody Resposta insert(@RequestBody Pessoa pessoa) {
 		log.debug("Pessoa - POST");
 		pessoaService.salvar(pessoa);
 		return new Resposta(ResponseStatus.SUCCESS, "Pessoa inserida com sucesso");
 	}
 
-	@RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
 	public @ResponseBody Resposta delete(@PathVariable Integer id) {
 		log.debug("Pessoa - DELETE");
 		pessoaService.remover(id);
 		return new Resposta(ResponseStatus.SUCCESS, "Pessoa removida com sucesso");
 	}
 
-	@RequestMapping(value = "update", method = RequestMethod.PUT)
-	public @ResponseBody Resposta update(@RequestBody Pessoa pessoa) {
+	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
+	public @ResponseBody Resposta update(@PathVariable Integer id, @RequestBody Pessoa pessoa) {
 		log.debug("Participante - PUT");
 		pessoaService.atualizar(pessoa);
 		return new Resposta(ResponseStatus.SUCCESS, "Pessoa atualizada com sucesso");

@@ -28,7 +28,7 @@ public class PessoaController {
 
 	@RequestMapping(value = "listar")
 	public String listar(Model model) {
-		String urlListar = url + "findAll";
+		String urlListar = url;
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Pessoa[]> responseEntity = restTemplate.getForEntity(urlListar, Pessoa[].class);
 		Pessoa[] pessoas = responseEntity.getBody();
@@ -45,7 +45,7 @@ public class PessoaController {
 
 	@RequestMapping(value = "adicionar", method = RequestMethod.POST)
 	public String adicionar(@ModelAttribute("pessoa") Pessoa pessoa, RedirectAttributes redirect) {
-		String urlAdicionar = url + "insert";
+		String urlAdicionar = url;
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Resposta> resposta = restTemplate.postForEntity(urlAdicionar, pessoa, Resposta.class);
 		redirect.addFlashAttribute("info", resposta.getBody().getResposta());
@@ -54,7 +54,7 @@ public class PessoaController {
 
 	@RequestMapping(value = "/remover/{id}", method = RequestMethod.GET)
 	public String remover(@PathVariable Integer id, RedirectAttributes redirect) {
-		String urlRemover = url + "/delete/" + id;
+		String urlRemover = url + id;
 		Map<String, Integer> params = new HashMap<String, Integer>();
 		params.put("id", id);
 
@@ -82,7 +82,7 @@ public class PessoaController {
 
 	@RequestMapping(value = "editar", method = RequestMethod.POST)
 	public String editar(@ModelAttribute("pessoa") Pessoa pessoa, RedirectAttributes redirect) {
-		String urlAtualizar = url + "update";
+		String urlAtualizar = url + pessoa.getId();
 		Map<String, Integer> params = new HashMap<String, Integer>();
 		params.put("id", pessoa.getId());
 
