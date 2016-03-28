@@ -1,0 +1,56 @@
+<form novalidate class="simple-form">
+  <input type="button" ng-click="cc.getTest()" value="Reset" />
+</form>
+
+<div class="bs-docs-section">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="page-header">
+				<h1 id="forms">Cadastrar</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="well bs-component">
+				<form class="form-horizontal"
+					ng-submit="cc.getCreate(nome, nascimento, cpf)">
+					<input type="hidden" ng-model="id" />
+					<fieldset>
+						<legend>Pessoa</legend>
+						<div class="form-group">
+							<label for="inputNome" class="col-lg-2 control-label">Nome</label>
+							<div class="col-lg-10">
+								<input type="text" ng-model="nome" class="form-control"
+									placeholder="Nome" /> <br />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputCpf" class="col-lg-2 control-label">Cpf</label>
+							<div class="col-lg-10">
+								<input type="text" ng-model="cpf" class="form-control"
+									placeholder="Cpf" /> <br />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputCpf" class="col-lg-2 control-label">Data
+								de Nascimento:</label>
+							<div class="col-lg-10">
+								<input id="datepicker" type="text" ng-model="nascimento"
+									placeholder="Data de Nascimento" class="form-control data" /> <br />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-2">
+								<button type="reset" class="btn btn-default">Cancel</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</fieldset>
+					<div id="source-button" class="btn btn-primary btn-xs"
+						style="display: none;">&lt; &gt;</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
